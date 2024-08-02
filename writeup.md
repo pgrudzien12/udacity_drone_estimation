@@ -37,3 +37,14 @@ Code Improvement: During this implementation, I optimized the copying of state v
 After implementing all the EKF components, the quadcopter's controller was de-tuned to ensure stable flight with realistic sensors. The final trajectory followed a box pattern, and the estimator performed adequately under realistic conditions.
 
 Performance Issues: Initial difficulties included improper integration of acceleration into the state prediction, and misinterpretation of the transition model. These were resolved by reconsideration of the EKF equations and refining the implementation.
+
+
+### Step 6: Adding Your Controller ###
+
+I added my controller with all the old paramteres and it worked without issues. I observed that its not so ideal as the provided one.
+
+I run all the scenarios and the tests pass though in one of the scnearios I observe crash in the end.
+
+(the scenario no 06. also passed but it's not visible on the screen)
+
+<img src="./my-controller.png">

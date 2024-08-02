@@ -20,7 +20,7 @@ public:
   VehicleCommand GenerateMotorCommands(float collThrustCmd, V3F momentCmd);
 
   // returns desired yaw rate
-  float YawControl(float yawCmd, float yaw);
+  float YawControl(float yawCmd, float yaw, float dt);
 
   // returns desired moments
   V3F BodyRateControl(V3F pqrCmd, V3F pqr);
@@ -35,8 +35,9 @@ public:
   // controller gains
   float kpPosXY, kpPosZ;
   float kpVelXY, kpVelZ;
-  float kpBank, kpYaw;
+  float kpBank, kdBank, kpYaw, kdYaw;
   float KiPosZ;
+  float KiYaw;
   V3F kpPQR;
   
   // limits & saturations
@@ -48,4 +49,6 @@ public:
 
   // integral control
   float integratedAltitudeError;
+  float integratedYawError;  
+  float prevYaw;
 };
